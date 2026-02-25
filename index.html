@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelVibe — Immersive Travel Experiences</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <h1 class="logo">🌍 TravelVibe</h1>
+                <nav class="nav">
+                    <button id="btn-home" class="nav-btn active">Home</button>
+                    <button id="btn-discover" class="nav-btn">Entdecke</button>
+                    <button id="btn-surprise" class="nav-btn surprise-btn">🎲 Überrasche mich</button>
+                    <button id="btn-add" class="nav-btn">+ Hinzufügen</button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Home View -->
+            <section id="view-home" class="view active">
+                <div class="hero">
+                    <h2>Reisen, die du fühlen wirst</h2>
+                    <p>Entdecke versteckte Schätze, Museen, Natur und echte Erlebnisse rund um die Welt.</p>
+                    <button id="btn-start" class="btn btn-primary">Los geht's</button>
+                </div>
+            </section>
+
+            <!-- Discover View -->
+            <section id="view-discover" class="view">
+                <div class="container">
+                    <h2>Entdecke Reiseziele</h2>
+                    
+                    <!-- Filters -->
+                    <div class="filters">
+                        <button class="filter-btn active" data-filter="all">Alle</button>
+                        <button class="filter-btn" data-filter="nature">🌲 Natur</button>
+                        <button class="filter-btn" data-filter="museum">🏛️ Museen</button>
+                        <button class="filter-btn" data-filter="urban">🏙️ Urban</button>
+                        <button class="filter-btn" data-filter="culinary">🍽️ Kulinarisch</button>
+                        <button class="filter-btn" data-filter="hidden-gem">💎 Hidden Gems</button>
+                    </div>
+
+                    <!-- Destinations Grid -->
+                    <div id="destinations-grid" class="destinations-grid">
+                        <!-- Cards werden hier eingefügt -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Destination Detail View -->
+            <section id="view-detail" class="view">
+                <div class="container">
+                    <button id="btn-back" class="btn-back">← Zurück</button>
+                    <article id="detail-content" class="detail-content">
+                        <!-- Content wird hier eingefügt -->
+                    </article>
+                </div>
+            </section>
+
+            <!-- Add Destination View -->
+            <section id="view-add" class="view">
+                <div class="container">
+                    <h2>Teile dein Reiseerlebnis</h2>
+                    <form id="form-add" class="form-add">
+                        <input type="text" placeholder="Zielname" name="name" required>
+                        <input type="text" placeholder="Stadt, Land" name="location" required>
+                        
+                        <select name="category" required>
+                            <option value="">— Kategorie wählen —</option>
+                            <option value="nature">🌲 Natur</option>
+                            <option value="museum">🏛️ Museen</option>
+                            <option value="urban">🏙️ Urban</option>
+                            <option value="culinary">🍽️ Kulinarisch</option>
+                            <option value="hidden-gem">💎 Hidden Gem</option>
+                        </select>
+
+                        <textarea placeholder="Was macht diesen Ort besonders?" name="description" required></textarea>
+                        <textarea placeholder="Wie fühlt sich dieser Ort an?" name="experience" required></textarea>
+
+                        <input type="url" placeholder="Video URL (optional)" name="video">
+                        <input type="text" placeholder="Foto URLs (komma-getrennt, optional)" name="photos">
+
+                        <textarea placeholder="Tipps (eine pro Zeile)" name="tips"></textarea>
+
+                        <button type="submit" class="btn btn-primary">Teilen</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>🌍 TravelVibe — Reisen, die Erlebnisse sind, nicht nur Orte</p>
+        </footer>
+    </div>
+
+    <script src="js/destinations.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
