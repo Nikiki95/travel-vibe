@@ -12,6 +12,8 @@ function initializeApp() {
     document.getElementById('btn-home').addEventListener('click', function() {
         showView('view-home');
         updateNavigation(this);
+        // Initialize map when home view is shown
+        setTimeout(() => initializeWorldMap(), 200);
     });
 
     document.getElementById('btn-discover').addEventListener('click', function() {
