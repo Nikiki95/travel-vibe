@@ -1,20 +1,26 @@
 // Main App Logic
 
-// Merge all destinations from both files
+// Merge all destinations from all files
 let allDestinations = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Wait for extended destinations to load, then merge
+    // Wait for all destination files to load, then merge
     setTimeout(() => {
         allDestinations = [...destinations];
         if (typeof extendedDestinations !== 'undefined') {
             allDestinations = [...allDestinations, ...extendedDestinations];
         }
+        if (typeof massiveDestinations !== 'undefined') {
+            allDestinations = [...allDestinations, ...massiveDestinations];
+        }
+        if (typeof megaDestinations !== 'undefined') {
+            allDestinations = [...allDestinations, ...megaDestinations];
+        }
         // Replace global destinations with merged list
         destinations.splice(0, destinations.length, ...allDestinations);
-        console.log(`✅ TravelVibe loaded with ${destinations.length} destinations worldwide`);
+        console.log(`✅ 🌍 TravelVibe MEGA loaded with ${destinations.length} destinations from 6 continents!`);
         initializeApp();
-    }, 100);
+    }, 150);
 });
 
 function initializeApp() {
