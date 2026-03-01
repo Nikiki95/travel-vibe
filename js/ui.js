@@ -133,6 +133,14 @@ function updateNavigation(activeBtn) {
     activeBtn.classList.add('active');
 }
 
+// Update destination count in hero stats
+function updateDestinationCount() {
+    const countElement = document.getElementById('stat-destinations');
+    if (countElement) {
+        countElement.textContent = destinations.length + '+';
+    }
+}
+
 // Initialize World Map with Leaflet
 let worldMap = null;
 

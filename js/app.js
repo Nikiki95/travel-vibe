@@ -1,7 +1,20 @@
 // Main App Logic
 
+// Merge all destinations from both files
+let allDestinations = [];
+
 document.addEventListener('DOMContentLoaded', () => {
-    initializeApp();
+    // Wait for extended destinations to load, then merge
+    setTimeout(() => {
+        allDestinations = [...destinations];
+        if (typeof extendedDestinations !== 'undefined') {
+            allDestinations = [...allDestinations, ...extendedDestinations];
+        }
+        // Replace global destinations with merged list
+        destinations.splice(0, destinations.length, ...allDestinations);
+        console.log(`✅ TravelVibe loaded with ${destinations.length} destinations worldwide`);
+        initializeApp();
+    }, 100);
 });
 
 function initializeApp() {
@@ -12,6 +25,7 @@ function initializeApp() {
     document.getElementById('btn-home').addEventListener('click', function() {
         showView('view-home');
         updateNavigation(this);
+        updateDestinationCount();
         // Initialize map when home view is shown
         setTimeout(() => initializeWorldMap(), 200);
     });

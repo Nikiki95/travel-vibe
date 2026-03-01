@@ -1,195 +1,530 @@
-// Sample Destinations Data
+// TravelVibe Destinations Database
+// Sources: Unsplash (free photos), Wikidata (coordinates), Wikipedia (descriptions)
+// Focus: Remote regions, hidden gems, authentic experiences
+
 const destinations = [
+    // ===== ZENTRALASIEN =====
     {
-        id: 'sagano-bamboo',
-        name: 'Sagano Bamboo Grove',
-        location: 'Kyoto, Japan',
+        id: 'pamir-highway',
+        name: 'Pamir Highway',
+        location: 'Tadschikistan',
         category: 'nature',
-        description: 'A magical forest of towering bamboo stalks that seem to whisper secrets. The light filters through in emerald streaks, and you can hear the gentle rustling above.',
-        experience: 'Peaceful, almost meditative. You feel small but grounded. It\'s like the forest is breathing with you.',
-        coordinates: [35.0116, 135.6741],
-        media: {
-            video: null,
-            photos: [
-                'https://images.unsplash.com/photo-1522383150241-1bcd39f6b050?w=800&q=80',
-                'https://images.unsplash.com/photo-1542401886-65d27afda266?w=800&q=80',
-                'https://images.unsplash.com/photo-1527746414334-a96dacb8a8b8?w=800&q=80'
-            ],
-            clip: null
-        },
-        tips: ['Go early morning before crowds', 'Wear comfortable shoes for walking', 'Bring a light jacket, it\'s cool in there'],
-        rating: 4.8,
-        vibe: 'peaceful'
-    },
-    {
-        id: 'louvre-hidden',
-        name: 'Secret Stairs of the Louvre',
-        location: 'Paris, France',
-        category: 'museum',
-        description: 'Not everyone knows about these hidden staircases and less-crowded galleries. You can see masterpieces without the tourist hordes.',
-        experience: 'Intimate, like discovering art that was meant just for you. Time slows down.',
-        coordinates: [48.8606, 2.3352],
-        media: {
-            video: null,
-            photos: [
-                'https://images.unsplash.com/photo-1578500494198-246f612d782b?w=800&q=80',
-                'https://images.unsplash.com/photo-1577720643272-265de8f8d8cb?w=800&q=80',
-                'https://images.unsplash.com/photo-1564399579883-451a5dcd2f27?w=800&q=80'
-            ],
-            clip: null
-        },
-        tips: ['Visit on weekday mornings', 'Skip the Mona Lisa crowds', 'Get a museum map from the info desk'],
-        rating: 4.6,
-        vibe: 'cultural'
-    },
-    {
-        id: 'tokyo-shibuya-night',
-        name: 'Shibuya at 3 AM',
-        location: 'Tokyo, Japan',
-        category: 'urban',
-        description: 'The famous Shibuya crossing when it\'s almost empty. Neon signs reflecting off wet pavement. The city\'s pulse at its quietest.',
-        experience: 'Surreal, cyberpunk, like you\'ve stepped into a movie. Quiet power.',
-        coordinates: [35.6595, 139.7004],
-        media: {
-            video: null,
-            photos: [
-                'https://images.unsplash.com/photo-1540959375944-7049f642e9a9?w=800&q=80',
-                'https://images.unsplash.com/photo-1563299789-0c6688c869b5?w=800&q=80',
-                'https://images.unsplash.com/photo-1522383150241-1bcd39f6b050?w=800&q=80'
-            ],
-            clip: null
-        },
-        tips: ['Bring a camera with good night settings', 'Wear warm clothes', 'Walk around, explore the back streets'],
-        rating: 4.7,
-        vibe: 'adventurous'
-    },
-    {
-        id: 'istanbul-spice-market',
-        name: 'Grand Bazaar Spice Market',
-        location: 'Istanbul, Turkey',
-        category: 'culinary',
-        description: 'A sensory explosion. Mountains of spices in every color imaginable. Vendors calling out in Turkish. The smell hits you before you see it.',
-        experience: 'Chaotic, vibrant, overwhelming in the best way. You feel alive.',
-        coordinates: [41.0082, 28.9789],
-        media: {
-            video: null,
-            photos: [
-                'https://images.unsplash.com/photo-1596040596457-3f8e3c2f0e4d?w=800&q=80',
-                'https://images.unsplash.com/photo-1585670954888-868b1a673b1b?w=800&q=80',
-                'https://images.unsplash.com/photo-1596614871839-71635b9fcccd?w=800&q=80'
-            ],
-            clip: null
-        },
-        tips: ['Go early to avoid crowds', 'Bring cash for vendors', 'Sample everything, haggle playfully'],
-        rating: 4.5,
-        vibe: 'adventurous'
-    },
-    {
-        id: 'mostar-bridge',
-        name: 'Stari Most at Sunset',
-        location: 'Mostar, Bosnia',
-        category: 'hidden-gem',
-        description: 'An Ottoman bridge that\'s seen centuries of history. Watch local divers jump from it at sunset. The stone glows golden.',
-        experience: 'Bittersweet, beautiful. You feel connected to history and the present moment at once.',
-        coordinates: [43.2019, 17.8132],
-        media: {
-            video: null,
-            photos: [
-                'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80',
-                'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
-                'https://images.unsplash.com/photo-1539571696357-5a69c006ae27?w=800&q=80'
-            ],
-            clip: null
-        },
-        tips: ['Tip the divers if you watch them jump', 'Watch sunset from the bridge', 'Explore the old town after dark'],
-        rating: 4.9,
-        vibe: 'scenic'
-    },
-    {
-        id: 'zhangjiajie-morning',
-        name: 'Zhangjiajie Mountains at Dawn',
-        location: 'Hunan, China',
-        category: 'nature',
-        description: 'Towering sandstone pillars rising through clouds. You literally stand above the clouds. Inspired Avatar\'s Pandora.',
-        experience: 'Otherworldly, humbling. Like you\'ve stepped into another planet.',
-        coordinates: [29.3255, 110.4329],
+        description: 'One of the world\'s highest mountain highways, crossing the Pamir Mountains at altitudes over 4,600m. Dramatic passes, remote villages, and breath-taking vistas.',
+        experience: 'Raw, untamed, utterly remote. You feel like you\'re driving at the edge of the world. The silence is profound.',
+        coordinates: [37.0, 72.0],
         media: {
             video: null,
             photos: [
                 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
-                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
-                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80'
-            ],
-            clip: null
-        },
-        tips: ['Stay overnight at mountain lodge', 'Wake up at 4 AM for best light', 'Bring layers, weather changes fast'],
-        rating: 4.8,
-        vibe: 'scenic'
-    },
-    {
-        id: 'oslo-opera',
-        name: 'Oslo Opera House Interior',
-        location: 'Oslo, Norway',
-        category: 'museum',
-        description: 'White marble infinity. You can walk on the roof. The acoustics inside are mind-blowing even when there\'s no performance.',
-        experience: 'Grand yet accessible. Modern Nordic elegance.',
-        coordinates: [59.9068, 10.7654],
-        media: {
-            video: null,
-            photos: [
-                'https://images.unsplash.com/photo-1495905845957-8d6c77e7b5a0?w=800&q=80',
-                'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80',
-                'https://images.unsplash.com/photo-1507838871253-6852a1fb151e?w=800&q=80'
-            ],
-            clip: null
-        },
-        tips: ['Free to explore exterior and some interior areas', 'Check for performances if you want music', 'Come at different times of day'],
-        rating: 4.7,
-        vibe: 'cultural'
-    },
-    {
-        id: 'ubud-rice-terraces',
-        name: 'Tegallalang Rice Terraces',
-        location: 'Ubud, Bali',
-        category: 'nature',
-        description: 'Emerald green rice paddies carved into hillsides. Ancient irrigation system still in use. You can hike through them and feel like you\'re walking through paintings.',
-        experience: 'Serene, green, grounding. Connected to earth and tradition.',
-        coordinates: [-8.4281, 115.2574],
-        media: {
-            video: null,
-            photos: [
-                'https://images.unsplash.com/photo-1537225228614-b4fad34a8b7d?w=800&q=80',
-                'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
                 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
             ],
             clip: null
         },
-        tips: ['Hike through the terraces early morning', 'Wear good shoes', 'Support local farmers by buying from them'],
-        rating: 4.6,
+        tips: ['Only passable June-September', 'Bring spare fuel and food', 'High altitude sickness common', 'Camp under stars'],
+        rating: 4.9,
+        vibe: 'adventurous'
+    },
+    {
+        id: 'song-kul-lake',
+        name: 'Song-Kul Alpine Lake',
+        location: 'Kyrgyzstan',
+        category: 'nature',
+        description: 'A pristine alpine lake at 3,016m surrounded by nomadic pastures. Yurts dot the shores. Nomadic herders still live seasonally here.',
+        experience: 'Serene, almost timeless. Like stepping into another era. The vastness humbles you.',
+        coordinates: [42.4539, 77.1700],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['Stay in yurts with locals', 'Best July-August', 'Horses for exploring', 'Bring warm clothes'],
+        rating: 4.8,
         vibe: 'peaceful'
-    }
-];
+    },
+    {
+        id: 'alay-valley',
+        name: 'Alay Valley',
+        location: 'Tajikistan',
+        category: 'nature',
+        description: 'Hidden valley with dramatic peaks, traditional apricot orchards, and virtually no tourists. Ancient Silk Road routes pass through here.',
+        experience: 'Isolated, authentic, deeply cultural. You\'re walking where traders walked 1000 years ago.',
+        coordinates: [36.8167, 71.5000],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['Hire local guides', 'Visit during harvest (August)', 'Learn basic Tajik greetings', 'Support local artisans'],
+        rating: 4.7,
+        vibe: 'cultural'
+    },
 
-// Utility function to get destinations by category
-function getDestinationsByCategory(category) {
-    if (category === 'all') return destinations;
-    return destinations.filter(d => d.category === category);
-}
+    // ===== PAZIFIK & OZEANIEN =====
+    {
+        id: 'vanuatu-volcano',
+        name: 'Yasur Volcano',
+        location: 'Vanuatu',
+        category: 'nature',
+        description: 'An active volcano you can hike to at sunset and watch the lava lake bubbling. One of the most accessible active volcanoes on Earth.',
+        experience: 'Primal, elemental, alive. Standing on the crater rim, you feel the Earth\'s power directly.',
+        coordinates: [-19.5238, 169.4417],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['Visit after sunset for best lava glow', 'Wear sturdy boots', 'Bring a headlamp', 'Local guides essential'],
+        rating: 4.9,
+        vibe: 'adventurous'
+    },
+    {
+        id: 'solomon-islands-pristine',
+        name: 'Iron Bottom Sound',
+        location: 'Solomon Islands',
+        category: 'hidden-gem',
+        description: 'Remote jungle-clad islands with WWII wrecks underwater and in the jungle. Zero tourist infrastructure, pure adventure.',
+        experience: 'Haunting, wild, disconnected. History is literally around you. Nature\'s slow reclamation is stunning.',
+        coordinates: [-9.0765, 160.2180],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['Malaria pills essential', 'Bring your own supplies', 'Hire local guides', 'Respect customs'],
+        rating: 4.6,
+        vibe: 'adventurous'
+    },
 
-// Utility function to get random destination
-function getRandomDestination() {
-    return destinations[Math.floor(Math.random() * destinations.length)];
-}
+    // ===== SÜDAMERIKA =====
+    {
+        id: 'mustang-nepal',
+        name: 'Mustang Region',
+        location: 'Nepal',
+        category: 'hidden-gem',
+        description: 'Upper Mustang: a Himalayan kingdom largely unchanged for centuries. Forbidden to tourists until 1992, still requires permits.',
+        experience: 'Otherworldly, spiritual. Ancient monasteries, red cliffs, and silence. You\'re in a lost world.',
+        coordinates: [29.1333, 84.4000],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['Permit required ($500+ USD)', 'Only June-September accessible', 'High altitude trek', 'Local guide mandatory'],
+        rating: 4.8,
+        vibe: 'spiritual'
+    },
+    {
+        id: 'torres-del-paine',
+        name: 'Torres del Paine',
+        location: 'Chile',
+        category: 'nature',
+        description: 'Patagonian peaks so dramatic they seem unreal. Granite towers, turquoise lakes, and wild weather. One of Earth\'s most stunning landscapes.',
+        experience: 'Majestic, raw, humbling. The landscape dominates. You\'re just a small witness to geological grandeur.',
+        coordinates: [-51.0000, -72.8667],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['December-February best season', 'W Trek is classic route', 'Prepare for sudden weather changes', 'Camp or stay in refugios'],
+        rating: 4.9,
+        vibe: 'scenic'
+    },
+    {
+        id: 'el-chalten',
+        name: 'El Chaltén',
+        location: 'Argentina',
+        category: 'nature',
+        description: 'Trekking capital of Patagonia. Granite peaks, turquoise rivers, and unmarked trails. Smaller and wilder than its neighbor.',
+        experience: 'Energetic, beautiful, accessible adventure. Mountains wrap around you everywhere.',
+        coordinates: [-49.3334, -72.8834],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['Summer (Dec-Feb) for best weather', 'Hike to Laguna de los Tres Picos', 'Climbers come for technical routes', 'Basic hostel accommodation'],
+        rating: 4.7,
+        vibe: 'adventurous'
+    },
 
-// Utility function to get destination by ID
-function getDestinationById(id) {
-    return destinations.find(d => d.id === id);
-}
+    // ===== SAHARA & SAHEL =====
+    {
+        id: 'tadrart-acacus',
+        name: 'Tadrart Acacus',
+        location: 'Libya',
+        category: 'nature',
+        description: 'A painted desert landscape with multi-colored rock formations, ancient cave art, and pre-Saharan history. Virtually unvisited.',
+        experience: 'Ancient, mystical, isolated. Rock formations glow at sunset. Petroglyphs whisper of past civilizations.',
+        coordinates: [26.8, 10.5],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['Currently restricted due to security', 'Requires permits and guides', 'Pre-Islamic petroglyphs to see', 'Extreme desert conditions'],
+        rating: 4.9,
+        vibe: 'spiritual'
+    },
+    {
+        id: 'djenne-mali',
+        name: 'Djenné',
+        location: 'Mali',
+        category: 'cultural',
+        description: 'Ancient trading city on an island, frozen in time. The Great Mosque is the world\'s largest mud-brick building. No tourists, just authenticity.',
+        experience: 'Timeless, deeply African, spiritually resonant. You\'re stepping into medieval Africa that still exists.',
+        coordinates: [13.9064, -4.0328],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['Visit Monday for the market', 'Respect prayer times', 'Learn basic French/Bambara', 'Security concerns - check before'],
+        rating: 4.8,
+        vibe: 'cultural'
+    },
 
-// Utility function to add new destination
-function addDestination(newDestination) {
-    newDestination.id = `custom-${Date.now()}`;
-    newDestination.rating = 5; // New destinations start with 5 stars
-    destinations.push(newDestination);
-    return newDestination;
-}
+    // ===== SIBIRIEN =====
+    {
+        id: 'kamchatka-peninsula',
+        name: 'Kamchatka Peninsula',
+        location: 'Russia',
+        category: 'nature',
+        description: 'Remote volcanic peninsula with brown bears, geysers, salmon rivers, and vast wilderness. One of Earth\'s last true wild places.',
+        experience: 'Pristine, powerful, primal. You\'re in a place where nature dominates completely.',
+        coordinates: [56.0, 158.0],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['July-September only accessible', 'Helicopter tours common', 'Watch bears safely from platforms', 'Expensive but once-in-lifetime'],
+        rating: 4.9,
+        vibe: 'adventurous'
+    },
+    {
+        id: 'lake-baikal',
+        name: 'Lake Baikal',
+        location: 'Russia',
+        category: 'nature',
+        description: 'World\'s deepest and oldest freshwater lake. Vast, crystalline waters. Trans-Siberian Railway passes nearby for epic journey.',
+        experience: 'Meditative, expansive, cold in the best way. The silence is almost tangible.',
+        coordinates: [53.0, 104.0],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['Winter: ice hike the frozen lake', 'Summer: kayaking and fishing', 'Stay in Listvyanka village', 'Train journey is the experience'],
+        rating: 4.8,
+        vibe: 'peaceful'
+    },
+
+    // ===== AUSTRALIEN =====
+    {
+        id: 'kimberley-region',
+        name: 'Kimberley Region',
+        location: 'Australia',
+        category: 'nature',
+        description: 'Remote red-rock wilderness with Aboriginal heritage sites, hidden waterfalls, and pristine beaches. True Outback adventure.',
+        experience: 'Ancient, vast, Indigenous-spirited. You\'re walking on country that\'s been cared for for 65,000 years.',
+        coordinates: [-17.3, 127.0],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['April-September (dry season)', 'High-clearance 4WD recommended', 'Respect Aboriginal sacred sites', 'Bring plenty of water'],
+        rating: 4.8,
+        vibe: 'adventurous'
+    },
+    {
+        id: 'uluru-kata-tjuta',
+        name: 'Uluru & Kata Tjuta',
+        location: 'Australia',
+        category: 'spiritual',
+        description: 'Sacred Aboriginal site. Massive red monolith Uluru and the 36 domes of Kata Tjuta. Desert landscapes that shift color with light.',
+        experience: 'Spiritual, grounding, ancient. You feel the land\'s presence. Sunrises and sunsets are transcendent.',
+        coordinates: [-25.3409, 131.0369],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['Don\'t climb Uluru (sacred)', 'Walk around it instead (10km)', 'Kata Tjuta Valley Walk recommended', 'Visit at sunset for colors'],
+        rating: 4.7,
+        vibe: 'spiritual'
+    },
+
+    // ===== HIMALAYA =====
+    {
+        id: 'ladakh-region',
+        name: 'Ladakh Region',
+        location: 'India',
+        category: 'nature',
+        description: 'High desert plateau at 3,500m+. Ancient Buddhist monasteries, high passes, moonscapes, and Ladakh\'s unique culture.',
+        experience: 'Stark, spiritual, breathtaking. The landscape is geometric perfection. Thin air, clear thoughts.',
+        coordinates: [34.0, 77.0],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['June-September accessible', 'Acclimatize in Leh first', 'Motorbike tours popular', 'Homestays with locals'],
+        rating: 4.8,
+        vibe: 'spiritual'
+    },
+    {
+        id: 'bhutan-kingdom',
+        name: 'Bhutan',
+        location: 'Bhutan',
+        category: 'cultural',
+        description: 'The last Himalayan kingdom. Only tourists with guides allowed. Pristine valleys, tiger monasteries, and "Gross National Happiness" philosophy.',
+        experience: 'Magical, preserved, intentionally slow. You\'re in a place that chose NOT to modernize. Spiritual and profound.',
+        coordinates: [27.5142, 90.4336],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['Book through licensed tour operator', 'March-May and September-November best', 'Paro Taktsang (Tiger\'s Nest) is hike highlight', 'Photography permits needed'],
+        rating: 4.9,
+        vibe: 'spiritual'
+    },
+
+    // ===== AFRIKKAS NEUE DESTINATIONEN =====
+    {
+        id: 'gorilla-forest',
+        name: 'Volcanoes National Park',
+        location: 'Rwanda',
+        category: 'nature',
+        description: 'Track mountain gorillas in their native habitat. Rainforests, volcanic peaks, and one of Africa\'s most moving experiences.',
+        experience: 'Humbling, emotional, connected. Looking into a gorilla\'s eyes changes you.',
+        coordinates: [-1.9536, 29.5853],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['Permits $1500 (expensive but worth it)', 'Only 8 visitors per gorilla group daily', 'Physical hike in steep terrain', 'Rainy season makes it misty and magical'],
+        rating: 4.9,
+        vibe: 'spiritual'
+    },
+    {
+        id: 'sossusvlei-namibia',
+        name: 'Sossusvlei',
+        location: 'Namibia',
+        category: 'nature',
+        description: 'The highest sand dunes on Earth (up to 300m). Salt pan surrounded by crimson dunes. Stark, otherworldly landscape.',
+        experience: 'Desert sublime. Walking on alien terrain. Dunes sing in the wind. Sunrises are surreal.',
+        coordinates: [-24.7625, 15.7639],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['Arrive at sunrise (4:30am)', 'Climb Dune 45 for iconic view', 'Dead Vlei is otherworldly', 'Bring tons of water'],
+        rating: 4.8,
+        vibe: 'scenic'
+    },
+
+    // ===== ISLAND COMMUNITIES =====
+    {
+        id: 'palau-islands',
+        name: 'Palau',
+        location: 'Palau',
+        category: 'nature',
+        description: 'Micronesian island nation with jellyfish lakes, pristine reefs, and rock islands. One of the world\'s biodiversity hotspots.',
+        experience: 'Paradise preserved. Snorkeling with millions of jellyfish (non-stinging). Island-hopping adventure.',
+        coordinates: [7.3150, 134.4807],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['Jellyfish Lake visit is surreal', 'Rock Islands boat tour essential', 'Pristine diving and snorkeling', 'Small island, can be touristy'],
+        rating: 4.7,
+        vibe: 'adventurous'
+    },
+    {
+        id: 'faroe-islands',
+        name: 'Faroe Islands',
+        location: 'Faroe Islands',
+        category: 'nature',
+        description: 'Nordic islands with dramatic cliffs, villages perched on mountainsides, and moody weather. Like stepping into a fairy tale.',
+        experience: 'Moody, majestic, utterly beautiful. Cliffs soar from dark waters. Light is golden and fleeting.',
+        coordinates: [62.0079, -6.7669],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['Summer for best weather', 'Hiking between villages', 'Photography Paradise', 'Expensive, but worth it'],
+        rating: 4.8,
+        vibe: 'scenic'
+    },
+
+    // ===== ASIATISCHE VERBORGENHEITEN =====
+    {
+        id: 'bagan-myanmar',
+        name: 'Bagan',
+        location: 'Myanmar',
+        category: 'cultural',
+        description: '2,000+ Buddhist temples rising from plains. Hot air balloon rides at sunrise. A spiritual landscape unlike anywhere else.',
+        experience: 'Mystical, vast, devotional. Hot air balloons float above pagodas at dawn. Time seems to bend here.',
+        coordinates: [21.1717, 94.8585],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['November-February best season', 'Hot air balloon at sunrise is must', 'Rent e-bike to explore temples', 'Local guides share stories'],
+        rating: 4.8,
+        vibe: 'spiritual'
+    },
+    {
+        id: 'ha-long-bay',
+        name: 'Halong Bay',
+        location: 'Vietnam',
+        category: 'nature',
+        description: 'UNESCO site with limestone karsts rising from emerald waters. Stay on junks, explore hidden lagoons and caves.',
+        experience: 'Dreamlike, ethereal, magical. Mist clings to rocks. You\'re in a landscape from Chinese paintings.',
+        coordinates: [20.8552, 107.1889],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['Book small junk (not tourist cruises)', 'Kayak to hidden lagoons', 'Overnight on water is magical', 'Avoid Chinese national holidays'],
+        rating: 4.7,
+        vibe: 'peaceful'
+    },
+
+    // ===== ISLAND OF THE SOUTHERN OCEAN =====
+    {
+        id: 'south-georgia',
+        name: 'South Georgia',
+        location: 'South Georgia & South Sandwich Islands',
+        category: 'nature',
+        description: 'Sub-Antarctic island with glaciers, millions of penguin/seal colonies, and mountains rising from the sea. Accessible only by ship.',
+        experience: 'Pristine, primal, polar. Wildlife abundance is staggering. You\'re truly at the edge of civilization.',
+        coordinates: [-54.2008, -36.5092],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['December-February only accessible', 'Multi-week cruise only way', 'Bring heavy expedition gear', 'One of Earth\'s last true wildernesses'],
+        rating: 4.9,
+        vibe: 'adventurous'
+    },
+
+    // ===== EUROPE HIDDEN GEMS =====
+    {
+        id: 'plitvice-lakes',
+        name: 'Plitvice Lakes',
+        location: 'Croatia',
+        category: 'nature',
+        description: 'Cascading lakes and waterfalls in a national park. 16 interconnected lakes at different elevations. Boardwalk through paradise.',
+        experience: 'Refreshing, verdant, peaceful. Water, light, and forest in perfect harmony.',
+        coordinates: [44.8654, 15.5820],
+        media: {
+            video: null,
+            photos: [
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+                'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80',
+                'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80'
+            ],
+            clip: null
+        },
+        tips: ['Spring for best water flow', 'Hike upper and lower lakes', 'Avoid peak summer crowds', 'Thermal cameras for night hikes'],
+        rating
